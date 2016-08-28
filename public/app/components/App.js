@@ -1,11 +1,12 @@
 import React from "react";
 import Branch from "./Branch";
+import Commit from "./Commit";
 import {COMMIT_DISTANCE, BRANCH_DISTANCE} from "../const";
 
 
 export default class App extends React.Component {
     render() {
-        let nbCommitMax = 4;
+        let nbCommitMax = 5;
         let nbBranchMax = 3;
 
         let width = BRANCH_DISTANCE * (nbBranchMax + 3);
@@ -13,16 +14,22 @@ export default class App extends React.Component {
 
         let branchOffsetX = BRANCH_DISTANCE/2;
 
-        let m0 = {x:branchOffsetX, y:(height)}
-        let m1 = {x:branchOffsetX, y:(height - COMMIT_DISTANCE)}
-        let m2 = {x:branchOffsetX, y:(height - 2 * COMMIT_DISTANCE)}
+        let m_0 = {x:branchOffsetX, y:(height)};
+        let m_1 = {x:branchOffsetX, y:(height - COMMIT_DISTANCE)};
+        let m_2 = {x:branchOffsetX, y:(height - 2 * COMMIT_DISTANCE)};
+        let m_4 = {x:branchOffsetX, y:(height - 4 * COMMIT_DISTANCE)};
 
-        let style = {stroke:"rgb(114,199,69)",strokeWidth:4};
+        let f1_1 = {x:branchOffsetX + BRANCH_DISTANCE, y:(height - 3 * COMMIT_DISTANCE)};
+        let f2_3 = {x:branchOffsetX + 2 * BRANCH_DISTANCE, y:(height - 4 * COMMIT_DISTANCE)};
+
+        let merge = {x:branchOffsetX + 3 * BRANCH_DISTANCE, y:(height - 5 * COMMIT_DISTANCE)};
+
         return (
             <svg height={height} width={width}>
-                <Branch name="master" commitNb={4} origin={m0} offsetX={0} color="rgb(86,169,246)"/>
-                <Branch name="features/f1" commitNb={1} origin={m2} offsetX={BRANCH_DISTANCE} color="rgb(114,199,69)"/>
-                <Branch name="features/f2" commitNb={3} origin={m1} offsetX={2 * BRANCH_DISTANCE} color="rgb(114,199,69)"/>
+                <Commit name="merge" origins={[m_4,f1_1,f2_3]} commit={merge} color="rgb(178,110,223)"/>
+                <Branch name="features/f2" commitNb={3} origin={m_1} offsetX={2 * BRANCH_DISTANCE} color="rgb(114,199,69)"/>
+                <Branch name="features/f1" commitNb={1} origin={m_2} offsetX={BRANCH_DISTANCE} color="rgb(114,199,69)"/>
+                <Branch name="master" commitNb={4} origin={m_0} offsetX={0} color="rgb(86,169,246)"/>
                 Sorry, your browser does not support inline SVG.
             </svg>
         )
