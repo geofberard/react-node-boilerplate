@@ -1,5 +1,5 @@
 import React from "react";
-import {COMMIT_DISTANCE, COMMIT_NODE_SIZE} from "../const";
+import {COMMIT_DISTANCE} from "../const";
 import Commit from "./Commit";
 
 export default class Branch extends React.Component {
