@@ -28,6 +28,7 @@ export default class App extends React.Component {
         let f3_2 = {x:branchOffsetX + 3 * BRANCH_DISTANCE, y:(height - 3 * COMMIT_DISTANCE)};
         let f3_3 = {x:branchOffsetX + 3 * BRANCH_DISTANCE, y:(height - 4 * COMMIT_DISTANCE)};
 
+        let merge_f2_f3 = {x:(f2_3.x + f3_3.x)/2, y:(height - 4.5 * COMMIT_DISTANCE)};
         let merge = {x:branchOffsetX + 3 * BRANCH_DISTANCE, y:(height - 5 * COMMIT_DISTANCE)};
 
         return (
@@ -204,6 +205,45 @@ export default class App extends React.Component {
                     <Commit name="octopus" origins={[m_4,f1_2,f2_3]} commit={merge} color="rgb(178,110,223)"/>
                     <Branch name="studies/new" commitNb={3} origin={m_1} offsetX={3 * BRANCH_DISTANCE} color="rgb(244,210,62)" commitDistance={2*COMMIT_DISTANCE}/>
                     <Branch name="features/f2" commitNb={3} origin={m_1} offsetX={2 * BRANCH_DISTANCE} color="rgb(114,199,69)"/>
+                    <Branch name="features/f1" commitNb={2} origin={m_2} offsetX={BRANCH_DISTANCE} color="rgb(114,199,69)"/>
+                    <Branch name="master" commitNb={4} origin={m_0} offsetX={0} color="rgb(86,169,246)"/>
+                    Sorry, your browser does not support inline SVG.
+                </svg>
+
+                <div className="separator">Merging Branch</div>
+
+                <svg height={height} width={width}>
+                    <Commit name="octopus" origins={[m_4,f1_2,f2_3,f3_3]} commit={merge} color="rgb(178,110,223)"/>
+                    <Branch name="features/new" commitNb={3} origin={m_1} offsetX={3 * BRANCH_DISTANCE} color="rgb(114,199,69)" commitDistance={2*COMMIT_DISTANCE}/>
+                    <Branch name="features/f2" commitNb={3} origin={m_1} offsetX={2 * BRANCH_DISTANCE} color="rgb(114,199,69)"/>
+                    <Branch name="features/f1" commitNb={2} origin={m_2} offsetX={BRANCH_DISTANCE} color="rgb(114,199,69)"/>
+                    <Branch name="master" commitNb={4} origin={m_0} offsetX={0} color="rgb(86,169,246)"/>
+                    Sorry, your browser does not support inline SVG.
+                </svg>
+
+                <svg height={height} width={width}>
+                    <Commit name="features/f2_new" origins={[f2_3,f3_3]} commit={merge_f2_f3} color="rgb(198,40,23)"/>
+                    <Branch name="features/new" commitNb={3} origin={m_1} offsetX={3 * BRANCH_DISTANCE} color="rgb(114,199,69)" commitDistance={2*COMMIT_DISTANCE}/>
+                    <Branch name="features/f2" commitNb={3} origin={m_1} offsetX={2 * BRANCH_DISTANCE} color="rgb(114,199,69)"/>
+                    <Branch name="features/f1" commitNb={2} origin={m_2} offsetX={BRANCH_DISTANCE} color="rgb(114,199,69)"/>
+                    <Branch name="master" commitNb={4} origin={m_0} offsetX={0} color="rgb(86,169,246)"/>
+                    Sorry, your browser does not support inline SVG.
+                </svg>
+
+                <svg height={height} width={width}>
+                    <Commit name="features/f2_new" origins={[f2_3,f3_3]} commit={merge_f2_f3} color="rgb(198,40,23)"/>
+                    <Branch name="" commitNb={3} origin={m_1} offsetX={3 * BRANCH_DISTANCE} color="rgb(114,199,69)" commitDistance={2*COMMIT_DISTANCE}/>
+                    <Branch name="" commitNb={3} origin={m_1} offsetX={2 * BRANCH_DISTANCE} color="rgb(114,199,69)"/>
+                    <Branch name="features/f1" commitNb={2} origin={m_2} offsetX={BRANCH_DISTANCE} color="rgb(114,199,69)"/>
+                    <Branch name="master" commitNb={4} origin={m_0} offsetX={0} color="rgb(86,169,246)"/>
+                    Sorry, your browser does not support inline SVG.
+                </svg>
+
+                <svg height={height} width={width}>
+                    <Commit name="octopus" origins={[m_4,f1_2,merge_f2_f3]} commit={merge} color="rgb(178,110,223)"/>
+                    <Commit name="features/f2_new" origins={[f2_3,f3_3]} commit={merge_f2_f3} color="rgb(198,40,23)"/>
+                    <Branch name="" commitNb={3} origin={m_1} offsetX={3 * BRANCH_DISTANCE} color="rgb(114,199,69)" commitDistance={2*COMMIT_DISTANCE}/>
+                    <Branch name="" commitNb={3} origin={m_1} offsetX={2 * BRANCH_DISTANCE} color="rgb(114,199,69)"/>
                     <Branch name="features/f1" commitNb={2} origin={m_2} offsetX={BRANCH_DISTANCE} color="rgb(114,199,69)"/>
                     <Branch name="master" commitNb={4} origin={m_0} offsetX={0} color="rgb(86,169,246)"/>
                     Sorry, your browser does not support inline SVG.
