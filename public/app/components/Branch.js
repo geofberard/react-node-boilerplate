@@ -7,7 +7,10 @@ export default class Branch extends React.Component {
         let commits = [];
         let head = this.props.origin;
         for (let i = 1; i <= this.props.commitNb; i++) {
-            let commit = {x: (head.x + (i == 1 ? this.props.offsetX : 0)), y: (head.y - COMMIT_DISTANCE)};
+            let commit = {
+                x: (head.x + (i == 1 ? this.props.offsetX : 0)),
+                y: (head.y + (i == 1 ? this.props.offsetY : 0) - COMMIT_DISTANCE)
+            };
             commits.push(<Commit name={i == this.props.commitNb ? this.props.name : ""} key={i}
                                  origins={[head]} commit={commit} color={this.props.color}/>)
             head = commit;
@@ -19,5 +22,7 @@ export default class Branch extends React.Component {
         );
     }
 }
+
+Branch.defaultProps = {offsetY: 0};
 
 export default Branch;
