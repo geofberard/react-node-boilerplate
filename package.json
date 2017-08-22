@@ -31,12 +31,17 @@
     "jquery": "^3.0.0",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
+    "prop-types": "^15.5.7",
     "react-css-modules": "^3.7.7",
     "react-redux": "^4.4.5",
+    "react-responsive-widget": "0.0.8",
     "react-router": "^2.6.0",
     "redux": "^3.5.2",
     "redux-thunk": "^2.1.0",
     "request": "^2.69.0",
     "style-loader": "^0.13.1"
+  },
+  "peerDependencies": {
+    "react": "^15.5.0"
   }
 }
